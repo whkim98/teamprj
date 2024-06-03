@@ -12,10 +12,12 @@ public class HolidayService {
     private HolidayMapperInter holidayInter;
 
     public int getSessionUserno(String user_id){
+        System.out.println("서비스옴");
         return holidayInter.getSessionUserno(user_id);
     }
 
     public UserDto getHoliday(int user_no){
+
         return holidayInter.getHoliday(user_no);
     }
 

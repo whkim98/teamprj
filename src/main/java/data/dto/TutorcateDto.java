@@ -10,6 +10,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class TutorcateDto {
-    private int tutorcateNo;
-    private int lectureNo;
+    private int tutorcate_no;
+    private int lecture_no;
 }

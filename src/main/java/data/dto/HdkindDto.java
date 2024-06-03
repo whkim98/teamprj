@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class HdkindDto {
-    private int hdkindNo;
-    private String hdkindName;
-    private double hdkindDays;
+    private int hdkind_no;
+    private String hdkind_name;
+    private double hdkind_days;
 }

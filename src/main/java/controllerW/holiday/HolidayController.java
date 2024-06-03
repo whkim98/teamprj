@@ -17,9 +17,11 @@ public class HolidayController {
     public String homain(String user_id, Model model) {
         System.out.println(user_id);
         int user_no = holidayService.getSessionUserno(user_id);
-        UserDto dto = holidayService.getHoliday(user_no);
+        System.out.println(user_no);
+        UserDto dto = new UserDto();
+        dto = holidayService.getHoliday(user_no);
         model.addAttribute("dto", dto);
-        System.out.println(dto.getUserName());
+        System.out.println(dto.getUser_name());
         return "holidayW/homain";
     }
 

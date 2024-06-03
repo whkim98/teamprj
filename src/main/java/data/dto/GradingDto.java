@@ -10,8 +10,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class GradingDto {
-    private int gradingNo;
-    private int testNo;
-    private String gradingContent;
-    private String gradingGrade;
+    private int grading_no;
+    private int test_no;
+    private String grading_content;
+    private String grading_grade;
 }

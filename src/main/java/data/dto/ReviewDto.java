@@ -12,10 +12,10 @@ import java.sql.Date;
 @NoArgsConstructor
 @Data
 public class ReviewDto {
-    private int reviewNo;
-    private String reviewTitle;
-    private String reviewContent;
-    private int reviewHit;
-    private Date reviewWriteday;
-    private int userNo;
+    private int review_no;
+    private String review_title;
+    private String review_content;
+    private int review_hit;
+    private Date review_writeday;
+    private int user_no;
 }

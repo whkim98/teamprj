@@ -10,9 +10,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class TestDto {
-    private int testNo;
-    private int lectureNo;
-    private int userNo;
-    private String testQuestion;
-    private String testContent;
+    private int test_no;
+    private int lecture_no;
+    private int user_no;
+    private String test_question;
+    private String test_content;
 }

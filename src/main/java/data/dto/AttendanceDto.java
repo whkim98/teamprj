@@ -13,9 +13,9 @@ import java.sql.Time;
 @NoArgsConstructor
 @Data
 public class AttendanceDto {
-    private int attendanceNo;
-    private Time attendanceIn;
-    private Time attendanceOut;
-    private Date attendanceDay;
-    private int userNo;
+    private int attendance_no;
+    private Time attendance_in;
+    private Time attendance_out;
+    private Date attendance_day;
+    private int user_no;
 }

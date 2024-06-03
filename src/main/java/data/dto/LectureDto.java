@@ -12,7 +12,7 @@ import java.sql.Time;
 @NoArgsConstructor
 @Data
 public class LectureDto {
-    private int lectureNo;
-    private String lectureName;
-    private Time lectureTime;
+    private int lecture_no;
+    private String lecture_name;
+    private Time lecture_time;
 }

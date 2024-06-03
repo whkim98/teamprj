@@ -14,20 +14,20 @@ import java.sql.Timestamp;
 @Builder
 @AllArgsConstructor
 public class UserDto {
-	private int userNo;
-    private String userName;
-    private String userId;
-    private String userPassword;
-    private String userAddr1;
-    private String userAddr2;
-    private String userPostal;
-    private String userResidentno;
-    private String userEmail;
-    private int userCategory; // 행정직원: 0, 학생: 1, 강사: 2
-    private double userHoliday;
-    private Integer userIncentive; // Nullable, with a default value*/
-    private Timestamp userGaipday; // Timestamp for registration date
-    private Integer tutorcateNo; // Nullable as it's a foreign key
+	private int user_no;
+    private String user_name;
+    private String user_id;
+    private String user_password;
+    private String user_addr1;
+    private String user_addr2;
+    private String user_postal;
+    private String user_residentno;
+    private String user_email;
+    private int user_category; // 행정직원: 0, 학생: 1, 강사: 2
+    private double user_holiday;
+    private Integer user_incentive; // Nullable, with a default value*/
+    private Timestamp user_gaipday; // Timestamp for registration date
+    private Integer tutorcate_no; // Nullable as it's a foreign key
 
 	
 	/*

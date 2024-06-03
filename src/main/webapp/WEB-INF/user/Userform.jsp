@@ -28,29 +28,29 @@
                 <div class="row gtr-uniform">
                     <div class="col-6 col-12-xsmall">
                         <label for="userName">이름 입력</label>
-                        <input type="text" name="userName" id="userName" placeholder="이름" required>
+                        <input type="text" name="user_name" id="userName" placeholder="이름" required>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userEmail">이메일</label>
-                        <input type="text" name="userEmail" id="userEmail" placeholder="이메일" required>
+                        <input type="text" name="user_email" id="userEmail" placeholder="이메일" required>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userId">아이디</label>
-                        <input type="text" name="userId" id="userId" placeholder="아이디" required>
+                        <input type="text" name="user_id" id="userId" placeholder="아이디" required>
                         <br>
                         <input type="button" value="중복 확인" id="btncheckid">
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userResidentno">주민등록번호</label>
                         <div style="display: flex; gap: 5px;">
-                            <input type="text" name="userResidentno" id="userResidentno" placeholder="6자리" required style="flex-grow: 1;" maxlength="6">
+                            <input type="text" name="user_residentno" id="userResidentno" placeholder="6자리" required style="flex-grow: 1;" maxlength="6">
                             -
                             <input type="password" name="userResidentPass" id="userResidentPass" placeholder="7자리" required style="flex-grow: 1;" maxlength="7">
                         </div>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userPassword">비밀번호</label>
-                        <input type="password" name="userPassword" id="userPassword" placeholder="비밀번호" required>
+                        <input type="password" name="user_password" id="userPassword" placeholder="비밀번호" required>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userPasswordConfirm">비밀번호 확인</label>
@@ -60,24 +60,24 @@
                         <label for="userPostal">우편번호</label>
                         <button id="searchPostalCode" type="button">우편번호찾기</button>
                         <br><br>
-                        <input type="text" name="userPostal" id="userPostal" placeholder="우편번호">
+                        <input type="text" name="user_postal" id="userPostal" placeholder="우편번호">
                         <br>
-                        <input type="text" name="userAddr1" id="userAddr1" placeholder="기본 주소">
+                        <input type="text" name="user_addr1" id="userAddr1" placeholder="기본 주소">
                         <br>
-                        <input type="text" name="userAddr2" id="userAddr2" placeholder="상세 주소">
+                        <input type="text" name="user_addr2" id="userAddr2" placeholder="상세 주소">
                         <br>
                         <input type="text" name="extraAddr" id="extraAddr" placeholder="참고 항목">
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="userCategory">가입 카테고리</label>
-                        <select name="userCategory" id="userCategory">
+                        <select name="user_category" id="userCategory">
                             <option value="0">학생</option>
                             <option value="2">관리자</option>
                         </select>
                     </div>
                     <div class="col-6 col-12-xsmall">
                         <label for="tutorcateNo">수업 카테고리</label>
-                        <select name="tutorcateNo" id="tutorcateNo">
+                        <select name="tutorcate_no" id="tutorcateNo">
                             <option value="1">JAVA</option>
                             <option value="2">PYTHON</option>
                             <option value="3">C#</option>

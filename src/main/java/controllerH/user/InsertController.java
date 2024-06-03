@@ -17,6 +17,7 @@ public class InsertController {
     @PostMapping("/insert")
     public String insert(@ModelAttribute UserDto dto) {
         // 데이터베이스에 회원 정보 저장
+
         userService.insertMember(dto);
         // 상세 페이지로 리다이렉트하며 userId를 쿼리 파라미터로 전달
         return "redirect:/";

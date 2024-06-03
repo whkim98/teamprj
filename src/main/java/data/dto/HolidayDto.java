@@ -12,9 +12,9 @@ import java.sql.Date;
 @NoArgsConstructor
 @Data
 public class HolidayDto {
-    private int holidayNo;
-    private int userNo;
-    private int hdkindNo;
-    private Date holidayStart;
-    private Date holidayEnd;
+    private int holiday_no;
+    private int user_no;
+    private int hdkind_no;
+    private Date holiday_start;
+    private Date holiday_end;
 }

@@ -10,8 +10,8 @@ public interface UserMapperInter {
 	@Insert("""
 	        INSERT INTO sys_user (user_name, user_id, user_password, user_addr1, user_addr2, user_postal,
 	        user_residentno, user_email, user_category, user_gaipday, tutorcate_no)
-	        VALUES (#{userName}, #{userId}, #{userPassword}, #{userAddr1}, #{userAddr2}, #{userPostal},
-	        #{userResidentno}, #{userEmail}, #{userCategory}, NOW(), #{tutorcateNo})
+	        VALUES (#{user_name}, #{user_id}, #{user_password}, #{user_addr1}, #{user_addr2}, #{user_postal},
+	        #{user_residentno}, #{user_email}, #{user_category}, NOW(), #{tutorcate_no})
 	    """)
 	public void insertMember(UserDto dto);
 
