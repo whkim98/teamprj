@@ -24,7 +24,6 @@ public interface UserMapperInter {
 	@Select("select count(*) from sys_user where user_id=#{user_id} and user_password = #{user_password}")
 	public int getIdCheckByUserId(String user_id, String user_password);
 
-
-
-
+	@Select("SELECT * FROM sys_user WHERE user_id = #{userId}")
+	public UserDto getSessionULno(String userId);
 }
