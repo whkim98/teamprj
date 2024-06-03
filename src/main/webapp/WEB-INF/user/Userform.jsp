@@ -21,7 +21,7 @@
 </div>
 
 <section id="main" class="wrapper">
-    <form action="./insert" method="post" enctype="multipart/form-data">
+    <form action="./insert" method="post" enctype="multipart/form-data" id="signupForm">
         <div class="inner">
             <div class="content">
                 <h2>계정 생성</h2>
@@ -75,6 +75,20 @@
                             <option value="2">관리자</option>
                         </select>
                     </div>
+                    <div class="col-6 col-12-xsmall">
+                        <label for="tutorcateNo">수업 카테고리</label>
+                        <select name="tutorcateNo" id="tutorcateNo">
+                            <option value="1">JAVA</option>
+                            <option value="2">PYTHON</option>
+                            <option value="3">C#</option>
+                            <option value="4">C++</option>
+                            <option value="5">PHP</option>
+                            <option value="6">R</option>
+                            <option value="7">REACT</option>
+                            <option value="8">JAVA SCRIPT, CSS, HTML</option>
+                        </select>
+                    </div>
+
                     <div class="col-12">
                         <ul class="actions">
                             <li><input type="submit" value="가입하기" class="primary" onclick="return check();"></li>
@@ -118,18 +132,27 @@
             });
         });
 
-        //아이디를 입력시 다시 중복확인을 누르도록 중복변수를 초기화
         $("#userId").keyup(function() {
             jungbok = false;
         });
 
-        function check() {
+        $("#signupForm").on("submit", function() {
+            // 아이디 중복 확인 검사
             if (!jungbok) {
                 alert("아이디 중복확인을 해주세요");
-                return false; // false 반환시 action 실행을 안함
+                return false;
             }
+
+            // 비밀번호 일치 검사
+            var password = $("#userPassword").val();
+            var confirmPassword = $("#userPasswordConfirm").val();
+            if (password !== confirmPassword) {
+                alert("입력하신 비밀번호가 일치하지 않습니다.");
+                return false;
+            }
+
             return true;
-        }
+        });
 
         document.getElementById("searchPostalCode").addEventListener("click", function() {
             searchAddr();
@@ -170,5 +193,9 @@
         }
     });
 </script>
+
+
+
+
 </body>
 </html>

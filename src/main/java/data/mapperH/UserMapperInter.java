@@ -9,9 +9,9 @@ import data.dto.UserDto;
 public interface UserMapperInter {
 	@Insert("""
 	        INSERT INTO sys_user (user_name, user_id, user_password, user_addr1, user_addr2, user_postal,
-	        user_residentno, user_email, user_category, user_gaipday)
+	        user_residentno, user_email, user_category, user_gaipday, tutorcate_no)
 	        VALUES (#{userName}, #{userId}, #{userPassword}, #{userAddr1}, #{userAddr2}, #{userPostal},
-	        #{userResidentno}, #{userEmail}, #{userCategory}, NOW())
+	        #{userResidentno}, #{userEmail}, #{userCategory}, NOW(), #{tutorcateNo})
 	    """)
 	public void insertMember(UserDto dto);
 
@@ -23,4 +23,8 @@ public interface UserMapperInter {
 
 	@Select("select count(*) from sys_user where user_id=#{user_id} and user_password = #{user_password}")
 	public int getIdCheckByUserId(String user_id, String user_password);
+
+
+
+
 }

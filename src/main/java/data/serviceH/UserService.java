@@ -26,4 +26,6 @@ public class UserService {
     public int getIdCheckByUserId(String user_id, String user_password){
         return userInter.getIdCheckByUserId(user_id, user_password);
     }
+
+
 }
