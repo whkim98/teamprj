@@ -6,8 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
 @SpringBootApplication
-@ComponentScan({"controller.*", "data.*", "com.example.demo", "naver.cloud"})
-@MapperScan("data.mapper")
+@ComponentScan({"controllerH.*", "data.*", "org.example.academyproject", "naver.cloud"})
+@MapperScan("data.mapperH")
 public class AcademyProjectApplication {
 
 	public static void main(String[] args) {

@@ -72,7 +72,6 @@
                         <label for="userCategory">가입 카테고리</label>
                         <select name="userCategory" id="userCategory">
                             <option value="0">학생</option>
-                            <option value="1">강사</option>
                             <option value="2">관리자</option>
                         </select>
                     </div>
