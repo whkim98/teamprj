@@ -38,8 +38,8 @@ public class HolidayController {
     @GetMapping("/holiday/submit")
     public String submit(int user_no, Model model) {
         List<HdkindDto> list = holidayService.getHdkind();
-        UserDto dto = holidayService.getHoliday(user_no);
-        model.addAttribute("dto", dto);
+        List<UserDto> listu = holidayService.getUser(user_no);
+        model.addAttribute("listu", listu);
         model.addAttribute("list", list);
         model.addAttribute("user_no", user_no);
         java.util.Date currentDate = new java.util.Date();

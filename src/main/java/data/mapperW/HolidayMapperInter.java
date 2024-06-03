@@ -27,4 +27,7 @@ public interface HolidayMapperInter {
     @Select("select hdkind_name from sys_hdkind where hdkind_no = #{hdkind_no}")
     public String getHdkindName(int hdkind_no);
 
+    @Select("select * from sys_user u right join sys_holiday h on u.user_no = h.user_no right join sys_hdkind hd on hd.hdkind_no = h.hdkind_no where u.user_no = #{user_no}")
+    public List<UserDto> getUser(int user_no);
+
 }

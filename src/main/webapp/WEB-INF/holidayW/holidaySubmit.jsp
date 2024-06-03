@@ -91,8 +91,6 @@
         <li><a href="#">회원정보 수정</a></li>
     </ul>
 </nav>
-<section id="banner">
-    <div class="inner">
         <form>
             <table style="width: 1000px; align-content: center">
                 <tr>
@@ -128,7 +126,7 @@
             <button type="submit" style="width: 100px;">신청</button>
         </form>
         <br><br>
-        <table id="holiday-table">
+        <table id="holiday-table" style="color: white">
             <tr>
                 <td>이름</td>
                 <td>아이디</td>
@@ -136,13 +134,17 @@
                 <td>휴가종료일</td>
                 <td>휴가종류</td>
             </tr>
+
+                <c:forEach var="dto" items="${listu}">
             <tr>
                 <td>${dto.user_name}</td>
                 <td>${dto.user_id}</td>
+                    <td>${dto.holiday_start}</td>
+                    <td>${dto.holiday_end}</td>
+                    <td>${dto.hdkind_name}</td>
             </tr>
+                </c:forEach>
+
         </table>
-    </div>
-    <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
-</section>
 </body>
 </html>

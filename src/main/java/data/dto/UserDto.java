@@ -29,6 +29,16 @@ public class UserDto {
     private Timestamp user_gaipday; // Timestamp for registration date
     private Integer tutorcate_no; // Nullable as it's a foreign key
 
+
+    private int hdkind_no;
+    private String hdkind_name;
+    private double hdkind_days;
+
+
+    private int holiday_no;
+    private String holiday_start;
+    private String holiday_end;
+
 	
 	/*
 	 * sequence 유저 이름 유저 아이디 유저 비밀번호

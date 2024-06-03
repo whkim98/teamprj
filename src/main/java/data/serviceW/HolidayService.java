@@ -37,4 +37,8 @@ public class HolidayService {
         return holidayInter.getHdkindName(hdkind_no);
     }
 
+    public List<UserDto> getUser(int user_no){
+        return holidayInter.getUser(user_no);
+    }
+
 }
