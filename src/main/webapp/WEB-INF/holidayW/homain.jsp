@@ -34,6 +34,21 @@
         </ul>
     </nav>
 </header>
-${dto.user_name}
+<nav id="menu">
+    <ul class="links">
+        <li><a href="#">출결 관리</a></li>
+        <li><a href="#">일정 관리</a></li>
+        <li><a href="#">훈련장려금</a></li>
+        <li><a href="#">회원정보 수정</a></li>
+    </ul>
+</nav>
+<section id="banner">
+    <div class="inner">
+        <h1>${dto.user_name}님 휴가 정보</h1>
+        <h2 style="color: #111111">잔여휴가: <fmt:formatNumber value="${dto.user_holiday}" type="number" maxFractionDigits="0"/>일 남았습니다.</h2>
+        <button type="button" onclick="location.href='/holiday/submit?user_no=${dto.user_no}'">휴가신청</button>
+    </div>
+    <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
+</section>
 </body>
 </html>

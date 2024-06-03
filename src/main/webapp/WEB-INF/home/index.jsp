@@ -21,7 +21,6 @@
 <form action="">
     <header id="header">
         <a class="logo" href="index.html">학원학원</a>
-
         <nav>
             <ul>
                 <li><a href="#">휴가 신청</a>

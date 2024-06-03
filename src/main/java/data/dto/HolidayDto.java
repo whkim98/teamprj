@@ -15,6 +15,6 @@ public class HolidayDto {
     private int holiday_no;
     private int user_no;
     private int hdkind_no;
-    private Date holiday_start;
-    private Date holiday_end;
+    private String holiday_start;
+    private String holiday_end;
 }

@@ -1,9 +1,13 @@
 package data.serviceW;
 
+import data.dto.HdkindDto;
+import data.dto.HolidayDto;
 import data.dto.UserDto;
 import data.mapperW.HolidayMapperInter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 public class HolidayService {
@@ -19,6 +23,18 @@ public class HolidayService {
     public UserDto getHoliday(int user_no){
 
         return holidayInter.getHoliday(user_no);
+    }
+
+    public List<HdkindDto> getHdkind(){
+        return holidayInter.getHdkind();
+    }
+
+    public void holidayInsert(HolidayDto dto){
+        holidayInter.holidayInsert(dto);
+    }
+
+    public String hdkindName(int hdkind_no){
+        return holidayInter.getHdkindName(hdkind_no);
     }
 
 }
