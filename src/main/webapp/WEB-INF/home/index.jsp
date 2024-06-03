@@ -26,14 +26,14 @@
             <ul>
                 <li><a href="#">휴가 신청</a>
                     <ul class="dropdown">
-                        <li><a href="#">휴가 신청</a> </li>
+                        <li><a href="/holiday/homain?user_id=${sessionScope.loginid}">휴가 신청</a> </li>
                         <li><a href="#">잔여휴가 확인</a></li>
                     </ul>
                 </li>
                 <li><a href="#">시험</a>
                     <ul class="dropdown">
-                        <li><a href="#">시험 보기</a></li>
-                        <li><a href="#">시험 점수 확인</a></li>
+                        <li><a href="/test/main">시험 보기</a></li>
+                        <li><a href="/test/check">시험 점수 확인</a></li>
                     </ul>
                 </li>
                 <li><a href="#">강사 소개</a></li>
