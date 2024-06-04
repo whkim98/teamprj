@@ -102,10 +102,10 @@
                     cell.innerHTML = "";
                 } else {
                     cell.innerHTML = date;
-                    let currentDate = new Date(year, month, date);
+                    let currentDate = new Date(year, month, date+1);
                     let formattedDate = currentDate.toISOString().split('T')[0];
                     if (formattedDate === attendanceDay) {
-                        cell.innerHTML += `<br>체크인: ${checkinTime}<br>체크아웃: ${checkoutTime}`;
+                        cell.innerHTML += `<br>체크인: ${checkin}<br>체크아웃: ${checkout}`;
                     } else if (formattedDate === holidayStart) {
                         cell.innerHTML += `<br>휴가 시작`;
                     } else if (formattedDate === holidayEnd) {
