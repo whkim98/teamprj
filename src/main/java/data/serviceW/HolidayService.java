@@ -41,4 +41,8 @@ public class HolidayService {
         return holidayInter.getUser(user_no);
     }
 
+    public int getHolidayDays(int user_no){
+        return holidayInter.getHolidayDays(user_no);
+    }
+
 }

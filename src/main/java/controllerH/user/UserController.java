@@ -59,6 +59,8 @@ public class UserController {
     public String incentive(HttpSession session, Model model) {
         String user_id = (String) session.getAttribute("loginid");
         int user_no = holidayService.getSessionUserno(user_id);
+        int attendance = userService.getAttendedDays(user_no);
+        model.addAttribute("attendance", attendance);
         return "user/incentive";
     }
 

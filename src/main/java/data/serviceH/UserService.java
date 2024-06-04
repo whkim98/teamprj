@@ -5,6 +5,8 @@ import org.springframework.stereotype.Service;
 import data.dto.UserDto;
 import data.mapperH.UserMapperInter;
 
+import java.util.Map;
+
 @Service
 public class UserService {
     @Autowired
@@ -35,7 +37,12 @@ public class UserService {
         return userInter.userCate(user_no);
     }
 
+    public int getAttendedDays(int user_no){
+        return userInter.getAttendedDays(user_no);
+    }
 
-
+    public void updateHoliday(Map<String, Object> map){
+        userInter.updateHoliday(map);
+    }
 
 }
