@@ -12,7 +12,7 @@
     <title>Dynamic Calendar 2024</title>
     <style>
         .calendar-container, .graph-container {
-            max-width: 600px;
+            max-width: 1000px;
             margin: 20px auto;
             text-align: center;
         }
@@ -22,9 +22,9 @@
         }
         th, td {
             border: 1px solid #ddd;
-            padding: 16px; /* 셀의 패딩을 늘림 */
+            padding: 30px; /* 셀의 패딩을 늘림 */
             text-align: center;
-            font-size: 18px; /* 글자 크기를 늘림 */
+            font-size: 10px; /* 글자 크기를 늘림 */
         }
 
 
@@ -38,6 +38,8 @@
 </head>
 <body>
 <div>
+    <p>체크인 시간: ${checkin}</p>
+    <p>체크아웃 시간: ${checkout}</p>
     <select id="monthSelect">
         <option value="1">January</option>
         <option value="2">February</option>

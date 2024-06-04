@@ -20,4 +20,12 @@ public interface AttendanceMapperInter {
 
     @Select("SELECT attendance_no FROM sys_attendance WHERE user_no = #{user_no} AND attendance_day = CURDATE()")
     public int getAttendanceNo(int user_no);
+
+    @Select("Select attendance_in FROM sys_attendance")
+    public String getAttendanceIn(int user_no);
+
+    @Select("Select attendance_out FROM sys_attendance")
+    public String getAttendanceOut(int user_no);
+
+
 }
