@@ -28,6 +28,7 @@ public class UserDto {
     private Integer user_incentive; // Nullable, with a default value*/
     private Timestamp user_gaipday; // Timestamp for registration date
     private Integer tutorcate_no; // Nullable as it's a foreign key
+    private String user_photo;
 
 
     private int hdkind_no;
@@ -39,7 +40,9 @@ public class UserDto {
     private String holiday_start;
     private String holiday_end;
 
-
+    private int lecture_no;
+    private String lecture_name;
+    private String lecture_time;
 
     /*
 	 * sequence 유저 이름 유저 아이디 유저 비밀번호
