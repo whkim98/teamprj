@@ -86,6 +86,7 @@
 
     function generateCalendar(year, month) {
         const firstDay = new Date(year, month, 1);
+        console.log(firstDay);
         const lastDay = new Date(year, month + 1, 0);
         const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
         calendarBody.innerHTML = "";
@@ -101,14 +102,11 @@
                     let formattedDate = currentDate.toISOString().split('T')[0];
 
                     cell.innerHTML = formattedDate;
-                    console.log(formattedDate);
-                    for(let i = 0; i < ${list.size()}; i++){
-                        if(formattedDate === ${list.})
-                    }
+
                     <%--if(formattedDate === ${dto.attendance_day}){--%>
                     <%--    cell.innerHTML = ${dto.attendance_in}--%>
                     <%--}--%>
-                        date++;
+                    date++;
 
                 }
             }

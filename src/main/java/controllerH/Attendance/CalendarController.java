@@ -26,7 +26,7 @@ public class CalendarController {
     @Autowired
     private HolidayService holidayService;
 
-    @GetMapping("Calendar/check")
+    @GetMapping("/Calendar/check")
     public String Calendarcheck(Model model,@RequestParam String user_id) {
         
         
@@ -38,6 +38,13 @@ public class CalendarController {
         int holidayCount=holidayService.getHolidayCount(user_no);
 
         List<AttendanceDto> list= userService.getAttendancedto(user_no);
+
+        for(int i = 0; i < list.size(); i++){
+            System.out.println(list.get(i).getAttendance_day());
+            System.out.println(list.get(i).getAttendance_in());
+            System.out.println(list.get(i).getAttendance_out());
+        }
+
         model.addAttribute("list", list);
         if(holidayCount>0) {
             HolidayDto holidayDto=holidayService.getHolidayByUserNo(user_no);

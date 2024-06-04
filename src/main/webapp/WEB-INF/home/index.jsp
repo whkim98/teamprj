@@ -209,13 +209,11 @@
             <section>
                 <div class="content">
                     <blockquote>
-                        <p>Nunc lacinia ante nunc ac lobortis ipsum. Interdum
-                            adipiscing gravida odio porttitor sem non mi integer non
-                            faucibus.</p>
+                        <p>ㅋㅋ켘</p>
                     </blockquote>
                     <div class="author">
                         <div class="image">
-                            <img height="256" width="256" style="max-width: none;" src="/images/pic01.jpg" alt="">
+                            <img height="256" width="256" style="max-width: none;" src="/images/냠냠.jpeg" alt="">
                         </div>
                         <p class="credit">
                             - <strong>Jane Doe</strong> <span>CEO - ABC Inc.</span>
@@ -230,7 +228,7 @@
                     </blockquote>
                     <div class="author">
                         <div class="image">
-                            <img height="256" width="256" style="max-width: none;" src="/images/우주냠냠.jpg" alt="">
+                            <img height="256" width="256" style="max-width: none;" src="/images/냠냠우주.jpeg" alt="">
                         </div>
                         <p class="credit">
                             - <strong>John Doe</strong> <span>CEO - ABC Inc.</span>
