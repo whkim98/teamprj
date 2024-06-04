@@ -49,7 +49,7 @@
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
-        <li><a href="#">출결 관리</a></li>
+        <li><a href="/Calendar/check?user_id=${sessionScope.loginid}">출결 관리</a></li>
         <li><a href="#">일정 관리</a></li>
         <li><a href="#">훈련장려금</a></li>
         <li><a href="#">회원정보 수정</a></li>

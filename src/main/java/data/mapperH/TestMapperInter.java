@@ -13,8 +13,8 @@ public interface TestMapperInter {
     public UserDto getSessionid(String userId);
 
 
-    @Insert("INSERT INTO sys_test (test_no, lecture_no, user_no, test_content) VALUES (#{testNo}, #{lectureNo}, #{userNo}, #{testContent})")
-    public void insertTest(int testNo, int lectureNo, int userNo, String testContent);
+    @Insert("INSERT INTO sys_test (lecture_no, user_no, test_content) VALUES (#{lectureNo}, #{userno}, #{testContent})")
+    public void insertTest(int lectureNo, int userno, String testContent);
 
 }
 
