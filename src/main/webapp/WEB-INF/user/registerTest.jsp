@@ -25,6 +25,11 @@
 <body>
 <h1>시험 제출 되었습니다.</h1>
 <button type="button" onclick="location.href='../index/index'">돌아가기</button>
-
+<h1>시험 결과</h1>
+<p>Form ID: ${formId}</p>
+<h3>답변 1:</h3>
+<p>${answer1}</p>
+<h3>답변 2:</h3>
+<p>${answer2}</p>
 </body>
 </html>

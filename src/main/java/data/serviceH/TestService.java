@@ -14,4 +14,9 @@ public class TestService {
     public UserDto getSessionid(String user_id){
         return testInter.getSessionid(user_id);
     }
+
+    public void insertTest(int testNo, int lectureNo, int userNo, String testContent){
+        testInter.insertTest(testNo,lectureNo,userNo,testContent);
+
+    }
 }
