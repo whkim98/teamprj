@@ -20,7 +20,7 @@
 <!-- Header -->
 <form action="">
     <header id="header">
-        <a class="logo" href="index.html">학원학원</a>
+        <a class="logo" href="/index/index">학원학원</a>
         <nav>
             <ul>
                 <li><a href="#">휴가 신청</a>
@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 <li><a href="#">강사 소개</a></li>
-                <li><a href="#">강의 후기</a></li>
+                <li><a href="/location/map">찾아오는 길</a></li>
                 <li>
                     <nav>
                         <a href="#menu" style="margin-left: 10px;">Menu</a>

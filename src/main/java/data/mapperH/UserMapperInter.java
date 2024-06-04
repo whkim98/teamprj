@@ -26,4 +26,7 @@ public interface UserMapperInter {
 
 	@Select("SELECT * FROM sys_user WHERE user_id = #{userId}")
 	public UserDto getSessionULno(String userId);
+
+	@Select("select user_category from sys_user where user_no = #{user_no}")
+	public int userCate(int user_no);
 }

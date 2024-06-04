@@ -57,7 +57,7 @@
 </head>
 <body>
 <header id="header">
-    <a class="logo" href="index.html">학원학원</a>
+    <a class="logo" href="/index/index">학원학원</a>
 
     <nav>
         <ul>
