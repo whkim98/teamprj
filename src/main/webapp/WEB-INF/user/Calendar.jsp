@@ -77,12 +77,13 @@
     <p>Graph View is not implemented yet.</p>
 </div>
 
-<c:foreach var="dto" items="${list}">
+<c:forEach var="dto" items="${list}">
     ${dto.attendance_day}
-
-</c:foreach>
-
+    ${dto.attendance_in}
+    ${dto.attendance_out}
+</c:forEach>
 <script>
+
     function generateCalendar(year, month) {
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
@@ -98,14 +99,22 @@
                 } else {
                     let currentDate = new Date(year, month, date);
                     let formattedDate = currentDate.toISOString().split('T')[0];
+
                     cell.innerHTML = formattedDate;
-                    date++;
+                    console.log(formattedDate);
+                    for(let i = 0; i < ${list.size()}; i++){
+                        if(formattedDate === ${list.})
+                    }
+                    <%--if(formattedDate === ${dto.attendance_day}){--%>
+                    <%--    cell.innerHTML = ${dto.attendance_in}--%>
+                    <%--}--%>
+                        date++;
+
                 }
             }
             if (date > lastDay.getDate()) break;
         }
     }
-
     document.getElementById('monthSelect').addEventListener('change', function() {
         generateCalendar(2024, parseInt(this.value));
     });

@@ -1,5 +1,6 @@
 package data.serviceH;
 
+import data.dto.AttendanceDto;
 import data.mapperW.AttendanceMapperInter;
 import data.serviceW.AttendanceService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -49,7 +50,7 @@ public class UserService {
         return userInter.getAttendedDays(user_no);
     }
 
-    public List<UserDto> getAttendancedto(int user_no){
+    public List<AttendanceDto> getAttendancedto(int user_no){
         return attendanceInter.getAttendancedto(user_no);
     }
 

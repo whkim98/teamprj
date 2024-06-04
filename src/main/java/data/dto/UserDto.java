@@ -39,8 +39,9 @@ public class UserDto {
     private String holiday_start;
     private String holiday_end;
 
-	
-	/*
+
+
+    /*
 	 * sequence 유저 이름 유저 아이디 유저 비밀번호
 	 *  유저 도로명주소 유저 상세주소 유저 우편번호
 	 *   유저 주민등록번호 

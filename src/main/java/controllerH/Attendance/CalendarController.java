@@ -1,5 +1,6 @@
 package controllerH.Attendance;
 
+import data.dto.AttendanceDto;
 import data.dto.HolidayDto;
 import data.dto.UserDto;
 import data.serviceH.UserService;
@@ -36,7 +37,7 @@ public class CalendarController {
 
         int holidayCount=holidayService.getHolidayCount(user_no);
 
-        List<UserDto> list= userService.getAttendancedto(user_no);
+        List<AttendanceDto> list= userService.getAttendancedto(user_no);
         model.addAttribute("list", list);
         if(holidayCount>0) {
             HolidayDto holidayDto=holidayService.getHolidayByUserNo(user_no);
@@ -48,7 +49,7 @@ public class CalendarController {
             model.addAttribute("holidayend", holidayend);
 
         }
-        else{
+        /*else{
             String checkin = attendanceService.getAttendanceIn(user_no);
             String checkout=attendanceService.getAttendanceOut(user_no);
             String attendance_day=attendanceService.getAttendanceDay(user_no);
@@ -58,7 +59,7 @@ public class CalendarController {
             model.addAttribute("checkin", checkin);
             model.addAttribute("checkout", checkout);
 
-        }
+        }*/
 
 
 

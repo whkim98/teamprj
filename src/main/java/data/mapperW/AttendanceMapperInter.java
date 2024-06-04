@@ -1,5 +1,6 @@
 package data.mapperW;
 
+import data.dto.AttendanceDto;
 import data.dto.UserDto;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
@@ -24,9 +25,8 @@ public interface AttendanceMapperInter {
     public int getAttendanceNo(int user_no);
 
 
-
     @Select("Select * FROM sys_attendance WHERE user_no = #{user_no}")
-    public List<UserDto> getAttendancedto(int user_no);
+    public List<AttendanceDto> getAttendancedto(int user_no);
 
 
 
