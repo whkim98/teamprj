@@ -59,4 +59,8 @@ public class UserService {
         userInter.updateHoliday(map);
     }
 
+    public String getLecturename(int user_no){
+        return userInter.getLecturename(user_no);
+    }
+
 }

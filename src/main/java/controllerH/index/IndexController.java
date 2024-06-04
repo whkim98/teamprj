@@ -29,6 +29,8 @@ public class IndexController {
         int user_category = userService.userCate(user_no);
         System.out.println(user_no);
         System.out.println(user_category);
+        String lecture_name = userService.getLecturename(user_no);
+        model.addAttribute("lecture_name", lecture_name);
         model.addAttribute("check", check);
         model.addAttribute("user_category", user_category);
         return "home/index";

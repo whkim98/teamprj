@@ -84,35 +84,41 @@
 </c:forEach>
 <script>
 
-    function generateCalendar(year, month) {
-        const firstDay = new Date(year, month, 1);
-        console.log(firstDay);
-        const lastDay = new Date(year, month + 1, 0);
-        const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
-        calendarBody.innerHTML = "";
-        let date = 1;
-        for (let row = 0; row < 6; row++) {
-            const newRow = calendarBody.insertRow(-1);
-            for (let col = 0; col < 7; col++) {
-                const cell = newRow.insertCell(-1);
-                if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
-                    cell.innerHTML = "";
-                } else {
-                    let currentDate = new Date(year, month, date);
-                    let formattedDate = currentDate.toISOString().split('T')[0];
+    let attendanceList = ${list};
+        function generateCalendar(year, month, attendanceList) {
+            const firstDay = new Date(year, month, 1);
+            const lastDay = new Date(year, month + 1, 0);
+            const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
+            calendarBody.innerHTML = "";
+            let date = 1;
 
-                    cell.innerHTML = formattedDate;
+            for (let row = 0; row < 6; row++) {
+                const newRow = calendarBody.insertRow(-1);
+                for (let col = 0; col < 7; col++) {
+                    const cell = newRow.insertCell(-1);
+                    if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
+                        cell.innerHTML = "";
+                    } else {
+                        let currentDate = new Date(year, month, date);
+                        let formattedDate = currentDate.toISOString().split('T')[0];
+                        cell.innerHTML = formattedDate;
 
-                    <%--if(formattedDate === ${dto.attendance_day}){--%>
-                    <%--    cell.innerHTML = ${dto.attendance_in}--%>
-                    <%--}--%>
-                    date++;
+                        // 출석 데이터가 있는지 확인
+                        let attendanceRecord = attendanceList.find(attendance => attendance.attendance_day === formattedDate);
+                        if (attendanceRecord) {
+                            cell.innerHTML += `<br>출근: ${attendanceRecord.attendance_in}<br>퇴근: ${attendanceRecord.attendance_out}`;
+                        }
 
+                        date++;
+                    }
                 }
+                if (date > lastDay.getDate()) break;
             }
-            if (date > lastDay.getDate()) break;
-        }
-    }
+        };
+
+    // 예제 사용: attendanceList를 인자로 전달
+    generateCalendar(2024, 5, attendanceList);
+
     document.getElementById('monthSelect').addEventListener('change', function() {
         generateCalendar(2024, parseInt(this.value));
     });

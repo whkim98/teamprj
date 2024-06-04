@@ -18,7 +18,6 @@
 <body class="is-preload">
 
 <!-- Header -->
-<form action="">
     <header id="header">
         <a class="logo" href="/index/index">그것 Academy</a>
         <nav>
@@ -38,7 +37,7 @@
                         </c:if>
                     </ul>
                 </li>
-                <li><a href="#">강사 소개</a></li>
+                <li><a href="/tutor/info">강사 소개</a></li>
                 <li><a href="/location/map">찾아오는 길</a></li>
                 <li>
                     <nav>
@@ -48,7 +47,6 @@
             </ul>
         </nav>
     </header>
-</form>
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
@@ -71,7 +69,7 @@
         <h5>안녕하세요.</h5>
         <form>
             <div class="textbox">
-                듣고 있는 과목 이름
+                수강과목: ${lecture_name}
             </div>
             <c:if test="${check != 1}">
             <input type="button" onclick="location.href='/attendance/in?user_id=${sessionScope.loginid}'" class="btn" value="입실">
@@ -259,15 +257,12 @@
     <div class="inner">
         <div class="content">
             <section>
-                <h3>Accumsan montes viverra</h3>
-                <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing
-                    gravida odio porttitor sem non mi integer non faucibus ornare mi
-                    ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien
-                    lorem accumsan varius montes viverra nibh in adipiscing. Lorem
-                    ipsum dolor vestibulum ante ipsum primis in faucibus vestibulum.
-                    Blandit adipiscing eu felis iaculis volutpat ac adipiscing sed
-                    feugiat eu faucibus. Integer ac sed amet praesent. Nunc lacinia
-                    ante nunc ac gravida.</p>
+                <h3>그것 Academy</h3>
+                <p>어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 </p>
             </section>
             <section>
                 <h4>Sem turpis amet semper</h4>
@@ -279,7 +274,7 @@
                 </ul>
             </section>
             <section>
-                <h4>Magna sed ipsum</h4>
+                <h4>그것 Academy 관련 링크</h4>
                 <ul class="plain">
                     <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
                     <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
@@ -290,9 +285,7 @@
         </div>
     </div>
 </footer>
-<div id="copyright " class="copyright">
-    Design by <a href="https://templated.co/">TEMPLATED</a>.
-</div>
+
 
 <!-- Scripts -->
 <script src="/assets/js/jquery.min.js"></script>

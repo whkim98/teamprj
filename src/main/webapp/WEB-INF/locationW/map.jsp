@@ -19,8 +19,9 @@
 <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Dancing+Script:wght@400..700&family=East+Sea+Dokdo&family=Jua&family=Gaegu&family=Gamja+Flower&family=Pacifico&family=Single+Day&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/main.css">
 <body>
+<!-- Header -->
 <header id="header">
-    <a class="logo" href="/index/index">학원학원</a>
+    <a class="logo" href="/index/index">그것 Academy</a>
     <nav>
         <ul>
             <li><a href="#">휴가 신청</a>
@@ -33,6 +34,9 @@
                 <ul class="dropdown">
                     <li><a href="/test/main?user_id=${sessionScope.loginid}">시험 보기</a></li>
                     <li><a href="/test/check?user_id=${sessionScope.loginid}">시험 점수 확인</a></li>
+                    <c:if test="${user_category != 0}">
+                        <li><a href="">시험 채점</a></li>
+                    </c:if>
                 </ul>
             </li>
             <li><a href="#">강사 소개</a></li>
@@ -45,6 +49,15 @@
         </ul>
     </nav>
 </header>
+<!-- Nav -->
+<nav id="menu">
+    <ul class="links">
+        <li><a href="/Calendar/check?user_id=${sessionScope.loginid}">출결 관리</a></li>
+        <li><a href="#">일정 관리</a></li>
+        <li><a href="/user/incentive?user_id=${sessionScope.loginid}">훈련장려금</a></li>
+        <li><a href="#">회원정보 수정</a></li>
+    </ul>
+</nav>
 <br>
 <iframe class="iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3165.360285733334!2d127.02645057496139!3d37.49941982797535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca194d4bb162f%3A0x9612cf895f23eaca!2z67mE7Yq47Lqg7ZSEIOqwleuCqOuzuOybkA!5e0!3m2!1sko!2skr!4v1717465582247!5m2!1sko!2skr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 <table class="table table-striped" style="width: 700px;">

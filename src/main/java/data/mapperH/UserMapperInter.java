@@ -61,4 +61,10 @@ public interface UserMapperInter {
 
 	@Update("update sys_user set user_holiday = user_holiday - #{holiday} where user_no = #{user_no}")
 	public void updateHoliday(Map<String, Object> map);
+
+	@Select("""
+	select l.lecture_name from sys_lecture l left join sys_tutorcate t on l.lecture_no = t.lecture_no left join sys_user u on
+    u.tutorcate_no = t.tutorcate_no where user_no = #{user_no};
+""")
+	public String getLecturename(int user_no);
 }
