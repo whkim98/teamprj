@@ -38,6 +38,6 @@
         </ul>
     </nav>
 </header>
-
+${attendance}
 </body>
 </html>

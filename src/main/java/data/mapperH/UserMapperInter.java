@@ -4,6 +4,9 @@ import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import data.dto.UserDto;
+import org.apache.ibatis.annotations.Update;
+
+import java.util.Map;
 
 @Mapper
 public interface UserMapperInter {
@@ -29,4 +32,34 @@ public interface UserMapperInter {
 
 	@Select("select user_category from sys_user where user_no = #{user_no}")
 	public int userCate(int user_no);
+
+	@Select("""
+        WITH RECURSIVE DateRange AS (
+            SELECT DATE(user_gaipday) AS date, user_no
+            FROM sys_user
+            WHERE user_no = #{user_no}
+            UNION ALL
+            SELECT DATE_ADD(date, INTERVAL 1 DAY), user_no
+            FROM DateRange
+            WHERE DATE_ADD(date, INTERVAL 1 DAY) < DATE_ADD((SELECT user_gaipday FROM sys_user WHERE user_no = #{user_no}), INTERVAL 1 MONTH)
+        ),
+        FilteredDates AS (
+            SELECT date, user_no
+            FROM DateRange
+            WHERE DAYOFWEEK(date) NOT IN (1, 7)
+        ),
+        NonAttendanceDays AS (
+            SELECT fd.date
+            FROM FilteredDates fd
+            LEFT JOIN sys_attendance a ON fd.date = a.attendance_day AND fd.user_no = a.user_no
+            WHERE a.attendance_day IS NULL
+        )
+        SELECT COUNT(*) AS non_attended_days
+        FROM NonAttendanceDays
+    """)
+	public int getAttendedDays(int user_no);
+
+	@Update("update sys_user set user_holiday = user_holiday - #{holiday} where user_no = #{user_no}")
+	public void updateHoliday(Map<String, Object> map);
+
 }

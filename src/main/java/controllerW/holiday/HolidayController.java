@@ -3,6 +3,7 @@ package controllerW.holiday;
 import data.dto.HdkindDto;
 import data.dto.HolidayDto;
 import data.dto.UserDto;
+import data.serviceH.UserService;
 import data.serviceW.HolidayService;
 import jakarta.servlet.http.HttpSession;
 import org.apache.catalina.User;
@@ -25,6 +26,8 @@ public class HolidayController {
 
     @Autowired
     private HolidayService holidayService;
+    @Autowired
+    private UserService userService;
 
     @GetMapping("/holiday/homain")
     public String homain(String user_id, Model model) {
@@ -39,15 +42,20 @@ public class HolidayController {
     public String submit(int user_no, Model model) {
         List<HdkindDto> list = holidayService.getHdkind();
         List<UserDto> listu = holidayService.getUser(user_no);
-        model.addAttribute("listu", listu);
-        model.addAttribute("list", list);
-        model.addAttribute("user_no", user_no);
+
+        System.out.println(user_no);
+
+
+
         java.util.Date currentDate = new java.util.Date();
 
         java.text.SimpleDateFormat sdf = new java.text.SimpleDateFormat("yyyy-MM-dd");
 
         String formattedDate = sdf.format(currentDate);
         model.addAttribute("formattedDate", formattedDate);
+        model.addAttribute("listu", listu);
+        model.addAttribute("list", list);
+        model.addAttribute("user_no", user_no);
         return "holidayW/holidaySubmit";
     }
 
@@ -60,6 +68,15 @@ public class HolidayController {
 
         System.out.println(user_id);
         System.out.println(user_no);
+
+        int holiday = holidayService.getHolidayDays(user_no);
+        System.out.println("힐리데[이 " + holiday);
+        if(holiday != 0) {
+            Map<String, Object> map = new HashMap<>();
+            map.put("holiday", holiday);
+            map.put("user_no", user_no);
+            userService.updateHoliday(map);
+        }
 
         HolidayDto dto = new HolidayDto();
         dto.setUser_no(user_no);

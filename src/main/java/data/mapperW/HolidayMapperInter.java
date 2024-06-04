@@ -30,4 +30,6 @@ public interface HolidayMapperInter {
     @Select("select * from sys_user u right join sys_holiday h on u.user_no = h.user_no right join sys_hdkind hd on hd.hdkind_no = h.hdkind_no where u.user_no = #{user_no}")
     public List<UserDto> getUser(int user_no);
 
+    @Select("SELECT COALESCE(SUM(DATEDIFF(holiday_end, holiday_start)), 0) AS holiday_days FROM sys_holiday WHERE user_no = #{user_no}")
+    public int getHolidayDays(int user_no);
 }
