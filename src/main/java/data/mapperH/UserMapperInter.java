@@ -29,4 +29,7 @@ public interface UserMapperInter {
 
 	@Select("select user_category from sys_user where user_no = #{user_no}")
 	public int userCate(int user_no);
+
+
+
 }
