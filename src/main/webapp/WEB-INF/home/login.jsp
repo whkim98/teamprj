@@ -23,18 +23,27 @@
             width: 90%; /* 폭 조정 */
             max-width: 300px; /* 최대 폭 설정 */
         }
+        #loginForm{
+            background-color: #ffffff;
+            padding: 30px 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
     </style>
 </head>
 <body class="is-preload">
 <div class="centered-form">
     <form id="loginForm">
-        <h1>학원 홈페이지</h1>
+        <h1>그것</h1>
+        <h2>Academy</h2>
         <input type="text" name="user_id" id="userId" placeholder="아이디" required>
         <input type="password" name="user_password" id="userPassword" placeholder="비밀번호" required>
         <button type="button" onclick="login()">로그인</button>
     </form>
     <div id="loginMessage"></div>
-    <a href="user/Userform" class="button">회원가입</a>
+    <a href="user/Userform" class="button"> 회원가입</a>
 </div>
 
 <!-- Scripts -->
