@@ -1,9 +1,11 @@
 package controllerH.user;
 
 import data.serviceH.UserService;
+import data.serviceW.HolidayService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -15,6 +17,9 @@ import java.util.Map;
 public class UserController {
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private HolidayService holidayService;
 
     @GetMapping("/user/Userform")
     public String userForm() {
@@ -48,6 +53,13 @@ public class UserController {
             response.put("status", "fail");
         }
         return response;
+    }
+
+    @GetMapping("/user/incentive")
+    public String incentive(HttpSession session, Model model) {
+        String user_id = (String) session.getAttribute("loginid");
+        int user_no = holidayService.getSessionUserno(user_id);
+        return "user/incentive";
     }
 
 }
