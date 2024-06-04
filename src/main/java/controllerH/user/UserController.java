@@ -61,6 +61,19 @@ public class UserController {
         int user_no = holidayService.getSessionUserno(user_id);
         int attendance = userService.getAttendedDays(user_no);
         model.addAttribute("attendance", attendance);
+
+        int incentive = userService.getIncentive(user_no);
+
+        int user_incentive = incentive - (attendance * 10000);
+
+        Map<String, Object> map = new HashMap<>();
+        map.put("user_incentive", user_incentive);
+        map.put("user_no", user_no);
+        userService.updateIncentive(map);
+
+        user_incentive = userService.getIncentive(user_no);
+        model.addAttribute("user_incentive", user_incentive);
+
         return "user/incentive";
     }
 

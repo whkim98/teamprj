@@ -63,4 +63,12 @@ public class UserService {
         return userInter.getLecturename(user_no);
     }
 
+    public void updateIncentive(Map<String, Object> map){
+        userInter.updateIncentive(map);
+    }
+
+    public int getIncentive(int user_no){
+        return userInter.getIncentive(user_no);
+    }
+
 }

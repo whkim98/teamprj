@@ -38,6 +38,7 @@
         </ul>
     </nav>
 </header>
-${attendance}
+${attendance}<br>
+${user_incentive}
 </body>
 </html>

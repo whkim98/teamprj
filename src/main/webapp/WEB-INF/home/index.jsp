@@ -265,12 +265,12 @@
                     어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 </p>
             </section>
             <section>
-                <h4>Sem turpis amet semper</h4>
+                <h4>넣을 게 없다</h4>
                 <ul class="alt">
-                    <li><a href="#">Dolor pulvinar sed etiam.</a></li>
-                    <li><a href="#">Etiam vel lorem sed amet.</a></li>
-                    <li><a href="#">Felis enim feugiat viverra.</a></li>
-                    <li><a href="#">Dolor pulvinar magna etiam.</a></li>
+                    <li><a href="#">02) 1122-3344</a></li>
+                    <li><a href="#">졸림 ㅠㅠ</a></li>
+                    <li><a href="#">ㅋㅋ켘ㅋ컄케</a></li>
+                    <li><a href="#">할 말 업슴</a></li>
                 </ul>
             </section>
             <section>

@@ -67,4 +67,16 @@ public interface UserMapperInter {
     u.tutorcate_no = t.tutorcate_no where user_no = #{user_no};
 """)
 	public String getLecturename(int user_no);
+
+	@Update("""
+	update sys_user set user_incentive = #{user_incentive} where user_no = #{user_no}
+""")
+	public void updateIncentive(Map<String, Object> map);
+
+	@Select("""
+	select user_incentive from sys_user where user_no = #{user_no}
+""")
+	public int getIncentive(int user_no);
+
+
 }
