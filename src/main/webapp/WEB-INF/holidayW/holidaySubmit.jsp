@@ -52,6 +52,13 @@
         /* 선택된 input 요소의 텍스트 색상을 검정색으로 설정 */
         input[type="date"]:focus {
             color: #111111;
+
+        }
+        #holiday-table{
+            width: 100%;
+        }
+        #tableform{
+            width:100%;
         }
     </style>
 </head>
@@ -94,11 +101,11 @@
         <li><a href="#">회원정보 수정</a></li>
     </ul>
 </nav>
-        <form>
-            <table style="width: 1000px; align-content: center">
+        <form id="tableform">
+            <table style="width: 100%; align-content: center">
                 <tr>
-                    <td colspan="2">
-                        <select name="hdkind_no">
+                    <td colspan="2" style="background-color: #f08080">
+                        <select name="hdkind_no" style="color: white">
                             <c:forEach var="dto" items="${list}">
                                 <option value="${dto.hdkind_no}">${dto.hdkind_name}</option>
                             </c:forEach>
@@ -106,22 +113,22 @@
                     </td>
                 </tr>
                 <tr>
-                    <td style="color: white">
+                    <td style="color: black">
                         휴가시작일
                     </td>
                     <td>
                         <label>
-                            <input type="date" name="holiday_start" id="holiday_start" value="${formattedDate}">
+                            <input type="date" name="holiday_start" id="holiday_start" value="${formattedDate}" style="width: 500px;">
                         </label>
                     </td>
                 </tr>
                 <tr>
-                    <td style="color: white">
+                    <td style="color: black">
                         휴가종료일
                     </td>
                     <td>
                         <label>
-                            <input type="date" name="holiday_end" id="holiday_end" value="${formattedDate}">
+                            <input type="date" name="holiday_end" id="holiday_end" value="${formattedDate}"style="width: 500px;">
                         </label>
                     </td>
                 </tr>
@@ -129,7 +136,7 @@
             <button type="submit" style="width: 100px;">신청</button>
         </form>
         <br><br>
-        <table id="holiday-table" style="color: white">
+        <table id="holiday-table" style="background-color: #f08080">
             <tr>
                 <td>이름</td>
                 <td>아이디</td>
@@ -142,7 +149,7 @@
             <tr>
                 <td>${dto.user_name}</td>
                 <td>${dto.user_id}</td>
-                    <td>${dto.holiday_start}</td>
+                    <td >${dto.holiday_start}</td>
                     <td>${dto.holiday_end}</td>
                     <td>${dto.hdkind_name}</td>
             </tr>

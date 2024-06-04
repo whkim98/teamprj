@@ -2,6 +2,7 @@
          pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 
 <!DOCTYPE html>
 <html>
@@ -77,50 +78,56 @@
     <p>Graph View is not implemented yet.</p>
 </div>
 
-<c:forEach var="dto" items="${list}">
-    ${dto.attendance_day}
-    ${dto.attendance_in}
-    ${dto.attendance_out}
-</c:forEach>
 <script>
+    // Convert the list of attendance data to a JSON object
+    let attendanceList = [
+        <c:forEach var="dto" items="${list}" varStatus="status">
+        {
+            "attendance_day": "${dto.attendance_day}",
+            "attendance_in": "${dto.attendance_in}",
+            "attendance_out": "${dto.attendance_out}"
+        }<c:if test="${!status.last}">,</c:if>
+        </c:forEach>
+    ];
 
-    let attendanceList = ${list};
-        function generateCalendar(year, month, attendanceList) {
-            const firstDay = new Date(year, month, 1);
-            const lastDay = new Date(year, month + 1, 0);
-            const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
-            calendarBody.innerHTML = "";
-            let date = 1;
+    console.log("Attendance List:", attendanceList); // Debugging line
 
-            for (let row = 0; row < 6; row++) {
-                const newRow = calendarBody.insertRow(-1);
-                for (let col = 0; col < 7; col++) {
-                    const cell = newRow.insertCell(-1);
-                    if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
-                        cell.innerHTML = "";
-                    } else {
-                        let currentDate = new Date(year, month, date);
-                        let formattedDate = currentDate.toISOString().split('T')[0];
-                        cell.innerHTML = formattedDate;
+    function generateCalendar(year, month, attendanceList) {
+        const firstDay = new Date(year, month, 1);
+        const lastDay = new Date(year, month + 1, 0);
+        const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
+        calendarBody.innerHTML = "";
+        let date = 1;
 
-                        // 출석 데이터가 있는지 확인
-                        let attendanceRecord = attendanceList.find(attendance => attendance.attendance_day === formattedDate);
-                        if (attendanceRecord) {
-                            cell.innerHTML += `<br>출근: ${attendanceRecord.attendance_in}<br>퇴근: ${attendanceRecord.attendance_out}`;
-                        }
+        for (let row = 0; row < 6; row++) {
+            const newRow = calendarBody.insertRow(-1);
+            for (let col = 0; col < 7; col++) {
+                const cell = newRow.insertCell(-1);
+                if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
+                    cell.innerHTML = "";
+                } else {
+                    let currentDate = new Date(year, month, date);
+                    let formattedDate = currentDate.toISOString().split('T')[0];
+                    cell.innerHTML = formattedDate;
 
-                        date++;
+                    // Check if there is attendance data for the current date
+                    let attendanceRecord = attendanceList.find(attendance => attendance.attendance_day === formattedDate);
+                    if (attendanceRecord) {
+                        console.log("Attendance Record for " + formattedDate + ":", attendanceRecord); // Debugging line
+                        cell.innerHTML += `<br>입실: ` + attendanceRecord.attendance_in + `<br>퇴실: ` + attendanceRecord.attendance_out;
                     }
-                }
-                if (date > lastDay.getDate()) break;
-            }
-        };
 
-    // 예제 사용: attendanceList를 인자로 전달
+                    date++;
+                }
+            }
+            if (date > lastDay.getDate()) break;
+        }
+    };
+
     generateCalendar(2024, 5, attendanceList);
 
     document.getElementById('monthSelect').addEventListener('change', function() {
-        generateCalendar(2024, parseInt(this.value));
+        generateCalendar(2024, parseInt(this.value), attendanceList);
     });
 
     document.getElementById('viewMode').addEventListener('change', function() {
@@ -140,8 +147,7 @@
             document.querySelector('.graph-container').classList.add('hidden');
         }
     });
-
-    generateCalendar(2024, 5); // Default to June 2024
 </script>
+
 </body>
 </html>
