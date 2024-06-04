@@ -27,6 +27,10 @@ public class UserService {
         return userInter.getIdCheckByUserId(user_id, user_password);
     }
 
+    public int userCate(int user_no){
+        return userInter.userCate(user_no);
+    }
+
 
 
 
