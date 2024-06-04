@@ -70,7 +70,12 @@
             <div class="textbox">
                 듣고 있는 과목 이름
             </div>
-            <input type="button" class="btn" value="입실"> <!--입실 누르면 퇴실로 바꾸기 -->
+            <c:if test="${check != 1}">
+            <input type="button" onclick="location.href='/attendance/in?user_id=${sessionScope.loginid}'" class="btn" value="입실">
+            </c:if>
+            <c:if test="${check == 1}">
+            <input type="button" onclick="location.href='/attendance/out?user_id=${sessionScope.loginid}'" class="btn" value="퇴실">
+            </c:if>
         </form>
     </div>
     <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
