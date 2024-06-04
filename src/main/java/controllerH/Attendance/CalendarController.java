@@ -12,6 +12,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.util.List;
+
 @Controller
 public class CalendarController {
     @Autowired
@@ -34,6 +36,8 @@ public class CalendarController {
 
         int holidayCount=holidayService.getHolidayCount(user_no);
 
+        List<UserDto> list= userService.getAttendancedto(user_no);
+        model.addAttribute("list", list);
         if(holidayCount>0) {
             HolidayDto holidayDto=holidayService.getHolidayByUserNo(user_no);
             String holidaystart=holidayDto.getHoliday_start();

@@ -35,25 +35,21 @@
     </style>
 </head>
 <body>
+
 <div>
-    <p>출석 날짜:${attendance_day}</p>
-    <p>체크인 시간: ${checkin}</p>
-    <p>체크아웃 시간: ${checkout}</p>
-    <p>휴가 시작:${holidaystart}</p>
-    <p>휴가 끝:${holidayend}</p>
     <select id="monthSelect">
-        <option value="1">January</option>
-        <option value="2">February</option>
-        <option value="3">March</option>
-        <option value="4">April</option>
-        <option value="5">May</option>
-        <option value="6" selected>June</option>
-        <option value="7">July</option>
-        <option value="8">August</option>
-        <option value="9">September</option>
-        <option value="10">October</option>
-        <option value="11">November</option>
-        <option value="12">December</option>
+        <option value="0">January</option>
+        <option value="1">February</option>
+        <option value="2">March</option>
+        <option value="3">April</option>
+        <option value="4">May</option>
+        <option value="5" selected>June</option>
+        <option value="6">July</option>
+        <option value="7">August</option>
+        <option value="8">September</option>
+        <option value="9">October</option>
+        <option value="10">November</option>
+        <option value="11">December</option>
     </select>
     <br><br>
     <input type="checkbox" id="viewMode" checked> <label for="viewMode">Calendar View</label>
@@ -81,13 +77,12 @@
     <p>Graph View is not implemented yet.</p>
 </div>
 
-<script>
-    const attendanceDay = "${attendance_day}";
-    const checkinTime = "${checkin}";
-    const checkoutTime = "${checkout}";
-    const holidayStart = "${holidaystart}";
-    const holidayEnd = "${holidayend}";
+<c:foreach var="dto" items="${list}">
+    ${dto.attendance_day}
 
+</c:foreach>
+
+<script>
     function generateCalendar(year, month) {
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
@@ -101,16 +96,9 @@
                 if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
                     cell.innerHTML = "";
                 } else {
-                    cell.innerHTML = date;
-                    let currentDate = new Date(year, month, date+1);
+                    let currentDate = new Date(year, month, date);
                     let formattedDate = currentDate.toISOString().split('T')[0];
-                    if (formattedDate === attendanceDay) {
-                        cell.innerHTML += `<br>체크인: ${checkin}<br>체크아웃: ${checkout}`;
-                    } else if (formattedDate === holidayStart) {
-                        cell.innerHTML += `<br>휴가 시작`;
-                    } else if (formattedDate === holidayEnd) {
-                        cell.innerHTML += `<br>휴가 끝`;
-                    }
+                    cell.innerHTML = formattedDate;
                     date++;
                 }
             }
@@ -119,7 +107,7 @@
     }
 
     document.getElementById('monthSelect').addEventListener('change', function() {
-        generateCalendar(2024, parseInt(this.value) - 1);
+        generateCalendar(2024, parseInt(this.value));
     });
 
     document.getElementById('viewMode').addEventListener('change', function() {

@@ -1,10 +1,12 @@
 package data.mapperW;
 
+import data.dto.UserDto;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 import org.apache.ibatis.annotations.Update;
 
+import java.util.List;
 import java.util.Map;
 
 @Mapper
@@ -21,14 +23,11 @@ public interface AttendanceMapperInter {
     @Select("SELECT attendance_no FROM sys_attendance WHERE user_no = #{user_no} AND attendance_day = CURDATE()")
     public int getAttendanceNo(int user_no);
 
-    @Select("Select attendance_in FROM sys_attendance WHERE user_no = #{user_no}")
-    public String getAttendanceIn(int user_no);
 
-    @Select("Select attendance_out FROM sys_attendance WHERE user_no = #{user_no}")
-    public String getAttendanceOut(int user_no);
 
-    @Select("Select attendance_day FROM sys_attendance WHERE user_no = #{user_no}")
-    public String getAttendanceDay(int user_no);
+    @Select("Select * FROM sys_attendance WHERE user_no = #{user_no}")
+    public List<UserDto> getAttendancedto(int user_no);
+
 
 
 
