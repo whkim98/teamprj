@@ -32,4 +32,11 @@ public interface HolidayMapperInter {
 
     @Select("SELECT COALESCE(SUM(DATEDIFF(holiday_end, holiday_start)), 0) AS holiday_days FROM sys_holiday WHERE user_no = #{user_no}")
     public int getHolidayDays(int user_no);
+
+    @Select("select count(*) from sys_holiday where user_no=#{user_no}")
+    public int getHolidayCount(int user_no);
+
+    @Select("select * from sys_holiday where user_no = #{user_no}")
+    public HolidayDto getHolidayByUserNo(int user_no);
+
 }

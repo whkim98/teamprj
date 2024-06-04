@@ -34,5 +34,8 @@ public class AttendanceService {
     public String getAttendanceOut(int user_no){
         return attendanceMapperInter.getAttendanceOut(user_no);
     }
+    public String getAttendanceDay(int user_no){
+        return attendanceMapperInter.getAttendanceDay(user_no);
+    }
 
 }

@@ -45,4 +45,12 @@ public class HolidayService {
         return holidayInter.getHolidayDays(user_no);
     }
 
+    public int getHolidayCount(int user_no){
+        return holidayInter.getHolidayCount(user_no);
+    }
+
+    public HolidayDto getHolidayByUserNo(int user_no){
+        return holidayInter.getHolidayByUserNo(user_no);
+    }
+
 }

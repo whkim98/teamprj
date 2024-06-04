@@ -26,8 +26,6 @@
             text-align: center;
             font-size: 10px; /* 글자 크기를 늘림 */
         }
-
-
         th {
             background-color: #CD0C22;
         }
@@ -38,8 +36,11 @@
 </head>
 <body>
 <div>
+    <p>출석 날짜:${attendance_day}</p>
     <p>체크인 시간: ${checkin}</p>
     <p>체크아웃 시간: ${checkout}</p>
+    <p>휴가 시작:${holidaystart}</p>
+    <p>휴가 끝:${holidayend}</p>
     <select id="monthSelect">
         <option value="1">January</option>
         <option value="2">February</option>
@@ -81,6 +82,12 @@
 </div>
 
 <script>
+    const attendanceDay = "${attendance_day}";
+    const checkinTime = "${checkin}";
+    const checkoutTime = "${checkout}";
+    const holidayStart = "${holidaystart}";
+    const holidayEnd = "${holidayend}";
+
     function generateCalendar(year, month) {
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
@@ -95,6 +102,15 @@
                     cell.innerHTML = "";
                 } else {
                     cell.innerHTML = date;
+                    let currentDate = new Date(year, month, date);
+                    let formattedDate = currentDate.toISOString().split('T')[0];
+                    if (formattedDate === attendanceDay) {
+                        cell.innerHTML += `<br>체크인: ${checkinTime}<br>체크아웃: ${checkoutTime}`;
+                    } else if (formattedDate === holidayStart) {
+                        cell.innerHTML += `<br>휴가 시작`;
+                    } else if (formattedDate === holidayEnd) {
+                        cell.innerHTML += `<br>휴가 끝`;
+                    }
                     date++;
                 }
             }
@@ -103,7 +119,7 @@
     }
 
     document.getElementById('monthSelect').addEventListener('change', function() {
-        generateCalendar(2024, parseInt(this.value));
+        generateCalendar(2024, parseInt(this.value) - 1);
     });
 
     document.getElementById('viewMode').addEventListener('change', function() {
