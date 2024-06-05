@@ -5,6 +5,52 @@
 <html>
 <head>
     <title>Title</title>
+    <style>
+        .banner-content {
+            text-align: center;
+            color: white;
+        }
+        .banner-content h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .holiday-info {
+            font-size: 1.5em;
+            color: #FFD700; /* Gold color for better visibility */
+            background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+        .holiday-info h2 {
+            margin: 0;
+        }
+        .holiday-info button {
+            margin-top: 1em;
+            padding: 10px 10px;
+            font-size: 1em;
+            color: #fff;
+            background-color: #e2212f; /* Button color */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .holiday-info button:hover {
+            background-color: #c91e2a; /* Darker button color on hover */
+        }
+        video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 100%;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            z-index: -1;
+            transform: translate(-50%, -50%);
+            object-fit: cover;
+        }
+    </style>
 </head>
 <body>
 <header id="header">
@@ -43,10 +89,12 @@
     </ul>
 </nav>
 <section id="banner">
-    <div class="inner">
+    <div class="inner banner-content">
         <h1>${dto.user_name}님 휴가 정보</h1>
-        <h2 style="color: #111111">잔여휴가: <fmt:formatNumber value="${dto.user_holiday}" type="number" maxFractionDigits="0"/>일 남았습니다.</h2>
-        <button type="button" onclick="location.href='/holiday/submit?user_no=${dto.user_no}'">휴가신청</button>
+        <div class="holiday-info">
+            <h2>잔여휴가: <fmt:formatNumber value="${dto.user_holiday}" type="number" maxFractionDigits="0"/>일 남았습니다.</h2>
+            <button type="button" onclick="location.href='/holiday/submit?user_no=${dto.user_no}'">휴가신청</button>
+        </div>
     </div>
     <video autoplay loop muted playsinline src="/images/banner.mp4"></video>
 </section>
