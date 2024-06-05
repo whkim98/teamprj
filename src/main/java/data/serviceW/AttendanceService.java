@@ -30,9 +30,9 @@ public class AttendanceService {
         return attendanceMapperInter.getAttendanceNo(user_no);
     }
 
-    public List<AttendanceDto> getAttendancedto(int user_no){
+    /*public List<AttendanceDto> getAttendancedto(int user_no){
         return attendanceMapperInter.getAttendancedto(user_no);
-    }
+    }*/
 
 
 }

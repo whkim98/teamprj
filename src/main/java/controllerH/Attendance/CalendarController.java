@@ -6,7 +6,6 @@ import data.dto.UserDto;
 import data.serviceH.UserService;
 import data.serviceW.AttendanceService;
 import data.serviceW.HolidayService;
-import org.apache.ibatis.annotations.Select;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,49 +26,31 @@ public class CalendarController {
     private HolidayService holidayService;
 
     @GetMapping("/Calendar/check")
-    public String Calendarcheck(Model model,@RequestParam String user_id) {
-        
-        
-        UserDto userDto=userService.getSessionULno(user_id);
-
+    public String Calendarcheck(Model model, @RequestParam String user_id) {
+        UserDto userDto = userService.getSessionULno(user_id);
         int user_no = userDto.getUser_no();
 
+        List<AttendanceDto> list = userService.getAttendancedto(user_no);
 
-        int holidayCount=holidayService.getHolidayCount(user_no);
-
-        List<AttendanceDto> list= userService.getAttendancedto(user_no);
-
-        for(int i = 0; i < list.size(); i++){
-            System.out.println(list.get(i).getAttendance_day());
-            System.out.println(list.get(i).getAttendance_in());
-            System.out.println(list.get(i).getAttendance_out());
+        for (AttendanceDto dto : list) {
+            System.out.println(dto.getAttendance_day());
+            System.out.println(dto.getAttendance_in());
+            System.out.println(dto.getAttendance_out());
         }
 
         model.addAttribute("list", list);
-        if(holidayCount>0) {
-            HolidayDto holidayDto=holidayService.getHolidayByUserNo(user_no);
-            String holidaystart=holidayDto.getHoliday_start();
-            String holidayend=holidayDto.getHoliday_end();
 
 
-            model.addAttribute("holidaystart", holidaystart);
-            model.addAttribute("holidayend", holidayend);
 
-        }
-        /*else{
-            String checkin = attendanceService.getAttendanceIn(user_no);
-            String checkout=attendanceService.getAttendanceOut(user_no);
-            String attendance_day=attendanceService.getAttendanceDay(user_no);
+        List<HolidayDto> holidayList = holidayService.getHolidaydto(user_no);
 
-
-            model.addAttribute("attendance_day",attendance_day);
-            model.addAttribute("checkin", checkin);
-            model.addAttribute("checkout", checkout);
+        /*for(HolidayDto dto : holidayList){
 
         }*/
 
-
+        model.addAttribute("holidayList", holidayList);
 
         return "user/Calendar";
     }
 }
+

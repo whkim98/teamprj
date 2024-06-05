@@ -90,9 +90,20 @@
         </c:forEach>
     ];
 
-    console.log("Attendance List:", attendanceList); // Debugging line
+    // Convert the list of holiday data to a JSON object
+    let holidayList = [
+        <c:forEach var="dto" items="${holidayList}" varStatus="status">
+        {
+            "holiday_start": "${dto.holiday_start}",
+            "holiday_end": "${dto.holiday_end}"
+        }<c:if test="${!status.last}">,</c:if>
+        </c:forEach>
+    ];
 
-    function generateCalendar(year, month, attendanceList) {
+    console.log("Attendance List:", attendanceList); // Debugging line
+    console.log("Holiday List:", holidayList); // Debugging line
+
+    function generateCalendar(year, month, attendanceList, holidayList) {
         const firstDay = new Date(year, month, 1);
         const lastDay = new Date(year, month + 1, 0);
         const calendarBody = document.getElementById('calendar').getElementsByTagName('tbody')[0];
@@ -117,6 +128,17 @@
                         cell.innerHTML += `<br>입실: ` + attendanceRecord.attendance_in + `<br>퇴실: ` + attendanceRecord.attendance_out;
                     }
 
+                    // Check if there is holiday data for the current date
+                    let holidayRecord = holidayList.find(holiday => holiday.holiday_start <= formattedDate && holiday.holiday_end >= formattedDate);
+                    if (holidayRecord) {
+                        if (holidayRecord.holiday_start === formattedDate) {
+                            cell.innerHTML += `<br>휴가 시작`;
+                        }
+                        if (holidayRecord.holiday_end === formattedDate) {
+                            cell.innerHTML += `<br>휴가 끝`;
+                        }
+                    }
+
                     date++;
                 }
             }
@@ -124,10 +146,10 @@
         }
     };
 
-    generateCalendar(2024, 5, attendanceList);
+    generateCalendar(2024, 5, attendanceList, holidayList);
 
     document.getElementById('monthSelect').addEventListener('change', function() {
-        generateCalendar(2024, parseInt(this.value), attendanceList);
+        generateCalendar(2024, parseInt(this.value), attendanceList, holidayList);
     });
 
     document.getElementById('viewMode').addEventListener('change', function() {
