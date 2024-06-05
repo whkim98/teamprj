@@ -7,6 +7,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="stylesheet" href="/assets/css/main.css">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="./assets/css/main.css">
@@ -88,8 +89,6 @@
         <option value="11">December</option>
     </select>
     <br><br>
-    <input type="checkbox" id="viewMode" checked> <label for="viewMode">Calendar View</label>
-    <input type="checkbox" id="graphMode"> <label for="graphMode">Graph View</label>
     <br><br>
 </div>
 <div class="calendar-container">
@@ -205,6 +204,37 @@
         }
     });
 </script>
-
+<footer id="footer">
+    <div class="inner">
+        <div class="content">
+            <section>
+                <h3>그것 Academy</h3>
+                <p>어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 </p>
+            </section>
+            <section>
+                <h4>넣을 게 없다</h4>
+                <ul class="alt">
+                    <li><a href="#">02) 1122-3344</a></li>
+                    <li><a href="#">졸림 ㅠㅠ</a></li>
+                    <li><a href="#">ㅋㅋ켘ㅋ컄케</a></li>
+                    <li><a href="#">할 말 업슴</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>그것 Academy 관련 링크</h4>
+                <ul class="plain">
+                    <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</footer>
 </body>
 </html>

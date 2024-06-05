@@ -110,7 +110,38 @@
         <h4>HTML과 CSS를 사용하여, 마우스를 오버할 때 이미지 크기가 점점 커지는 애니메이션 효과를 구현하세요.</h4>
         <textarea> </textarea>
     </form>
-
+<footer id="footer">
+    <div class="inner">
+        <div class="content">
+            <section>
+                <h3>그것 Academy</h3>
+                <p>어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고
+                    어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 어쩌고 저쩌고 </p>
+            </section>
+            <section>
+                <h4>넣을 게 없다</h4>
+                <ul class="alt">
+                    <li><a href="#">02) 1122-3344</a></li>
+                    <li><a href="#">졸림 ㅠㅠ</a></li>
+                    <li><a href="#">ㅋㅋ켘ㅋ컄케</a></li>
+                    <li><a href="#">할 말 업슴</a></li>
+                </ul>
+            </section>
+            <section>
+                <h4>그것 Academy 관련 링크</h4>
+                <ul class="plain">
+                    <li><a href="#"><i class="icon fa-twitter">&nbsp;</i>Twitter</a></li>
+                    <li><a href="#"><i class="icon fa-facebook">&nbsp;</i>Facebook</a></li>
+                    <li><a href="#"><i class="icon fa-instagram">&nbsp;</i>Instagram</a></li>
+                    <li><a href="#"><i class="icon fa-github">&nbsp;</i>Github</a></li>
+                </ul>
+            </section>
+        </div>
+    </div>
+</footer>
 
 </body>
 </html>
