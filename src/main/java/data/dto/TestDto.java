@@ -14,4 +14,8 @@ public class TestDto {
     private int lecture_no;
     private int user_no;
     private String test_content;
+
+    private String user_name;
+    private String user_id;
+    private String lecture_name;
 }

@@ -33,7 +33,7 @@
                         <li><a href="/test/main?user_id=${sessionScope.loginid}">시험 보기</a></li>
                         <li><a href="/test/check?user_id=${sessionScope.loginid}">시험 점수 확인</a></li>
                         <c:if test="${user_category != 0}">
-                            <li><a href="">시험 채점</a></li>
+                            <li><a href="/grading/grade?user_id=${sessionScope.loginid}">시험 채점</a></li>
                         </c:if>
                     </ul>
                 </li>
