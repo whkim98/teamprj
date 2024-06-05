@@ -25,7 +25,6 @@
                 <li><a href="#">휴가 신청</a>
                     <ul class="dropdown">
                         <li><a href="/holiday/homain?user_id=${sessionScope.loginid}">휴가 신청</a> </li>
-                        <li><a href="#">잔여휴가 확인</a></li>
                     </ul>
                 </li>
                 <li><a href="#">시험</a>
@@ -51,8 +50,6 @@
 <nav id="menu">
     <ul class="links">
         <li><a href="/Calendar/check?user_id=${sessionScope.loginid}">출결 관리</a></li>
-        <li><a href="#">일정 관리</a></li>
-        <li><a href="/user/incentive?user_id=${sessionScope.loginid}">훈련장려금</a></li>
         <li><a href="#">회원정보 수정</a></li>
     </ul>
 </nav>

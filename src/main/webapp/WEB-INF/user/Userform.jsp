@@ -9,12 +9,6 @@
     <link rel="stylesheet" href="/assets/css/main.css">
 </head>
 <body>
-<header id="header">
-    <a class="logo" href="index.html">비트캠프</a>
-    <nav>
-        <a href="#menu">Menu</a>
-    </nav>
-</header>
 
 <div id="heading">
     <h1>회원 가입</h1>
