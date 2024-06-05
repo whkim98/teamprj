@@ -4,7 +4,8 @@
 <html>
 <head>
     <title>Title</title>
-</head><link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+</head>
 <body class="is-preload">
 
 <!-- Header -->
@@ -14,7 +15,7 @@
         <ul>
             <li><a href="#">휴가 신청</a>
                 <ul class="dropdown">
-                    <li><a href="/holiday/homain?user_id=${sessionScope.loginid}">휴가 신청</a> </li>
+                    <li><a href="/holiday/homain?user_id=${sessionScope.loginid}">휴가 신청</a></li>
                     <li><a href="#">잔여휴가 확인</a></li>
                 </ul>
             </li>
@@ -37,6 +38,7 @@
         </ul>
     </nav>
 </header>
+
 <!-- Nav -->
 <nav id="menu">
     <ul class="links">
@@ -46,10 +48,61 @@
         <li><a href="#">회원정보 수정</a></li>
     </ul>
 </nav>
+
+<!-- Content -->
+<c:set var="lastLectureName" value="" />
+<c:set var="firstTestNo" value="${list[0].test_no}" />
+
+<!-- 과목명과 사용자 답안 출력 -->
 <c:forEach var="dto" items="${list}">
-    ${dto.lecture_name}
-    ${dto.user_name}
-    ${dto.test_content}
+    <c:if test="${lastLectureName != dto.lecture_name}">
+        <h2 class="tracking-in-expand">${dto.lecture_name}</h2>
+        <h3 class="tracking-in-expand">[${dto.user_name}]님의 답안입니다.</h3>
+        <c:set var="lastLectureName" value="${dto.lecture_name}" />
+    </c:if>
 </c:forEach>
+
+<!-- 폼 시작 -->
+<form action="/grading/check" method="get">
+    <input type="hidden" name="test_no" value="${firstTestNo}" />
+    <input type="hidden" name="user_no" value="${user_no}">
+    <c:forEach var="dto" items="${list}">
+        <table>
+            <tr>
+                <th colspan="2">사용자로부터 두 개의 정수를 입력받아, 두 수의 최소공배수(LCM)를 계산하여 출력하는 자바 프로그램을 작성하세요.</th>
+            </tr>
+            <tr>
+                <td>${dto.test_content}</td>
+            </tr>
+        </table>
+    </c:forEach>
+
+    <!-- 폼 내에 채점 내용과 제출 버튼 포함 -->
+    <table>
+        <tr>
+            <th>채점내용</th>
+        </tr>
+        <tr>
+            <td><textarea name="grading_content" required="required" style="width: 100%; height: 150px;" placeholder="내용 입력하셈"></textarea></td>
+        </tr>
+        <tr>
+            <td style="width: 50px;">
+                <label>
+                    <select name="grading_grade">
+                        <option value="A" selected>A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                        <option value="E">E</option>
+                    </select>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td><input type="submit" value="Submit"/></td>
+        </tr>
+    </table>
+</form>
+
 </body>
 </html>

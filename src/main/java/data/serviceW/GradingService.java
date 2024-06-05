@@ -1,5 +1,6 @@
 package data.serviceW;
 
+import data.dto.GradingDto;
 import data.dto.TestDto;
 import data.mapperW.GradingMapperInter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,9 @@ public class GradingService {
 
     public List<TestDto> getTestUser(Map<String, Object> map){
         return gradingMapperInter.getTestUser(map);
+    }
+
+    public void insertGrading(GradingDto dto){
+        gradingMapperInter.insertGrading(dto);
     }
 }
