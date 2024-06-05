@@ -68,10 +68,10 @@
             <div class="textbox">
                 수강과목: ${lecture_name}
             </div>
-            <c:if test="${check != 1}">
+            <c:if test="${check != 0}">
             <input type="button" onclick="location.href='/attendance/in?user_id=${sessionScope.loginid}'" class="btn" value="입실">
             </c:if>
-            <c:if test="${check == 1}">
+            <c:if test="${check == 0}">
             <input type="button" onclick="location.href='/attendance/out?user_id=${sessionScope.loginid}'" class="btn" value="퇴실">
             </c:if>
         </form>

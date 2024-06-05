@@ -18,7 +18,16 @@ public interface AttendanceMapperInter {
     @Update("update sys_attendance set attendance_out = now() where attendance_no = #{attendance_no}")
     public void updateAttendanceOut(int attendance_no);
 
-    @Select("select count(*) from sys_attendance where user_no = #{user_no} and attendance_in is not null")
+    @Select("""
+    SELECT
+        CASE
+            WHEN COUNT(*) = 0 THEN 1
+            ELSE 0
+            END AS result
+    FROM sys_attendance
+    WHERE user_no = #{user_no}
+      AND DATE(attendance_day) = CURRENT_DATE
+""")
     public int getCheckIn(int user_no);
 
     @Select("SELECT attendance_no FROM sys_attendance WHERE user_no = #{user_no} AND attendance_day = CURDATE()")
