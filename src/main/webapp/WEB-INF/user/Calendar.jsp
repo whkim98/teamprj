@@ -151,7 +151,7 @@
                 if ((row === 0 && col < firstDay.getDay()) || date > lastDay.getDate()) {
                     cell.innerHTML = "";
                 } else {
-                    let currentDate = new Date(year, month, date);
+                    let currentDate = new Date(year, month, date+1);
                     let formattedDate = currentDate.toISOString().split('T')[0];
                     cell.innerHTML = formattedDate;
 
