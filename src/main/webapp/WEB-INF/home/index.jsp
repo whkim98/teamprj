@@ -56,7 +56,7 @@
 <!-- Banner -->
 <section id="banner">
     <div class="inner">
-        <h1>그것 Academy</h1>
+        <h1>그것(IT) Academy</h1>
         <p>
             우하핰ㅋㅋ <a href="https://templated.co/">그것</a> 호호호
         </p>
