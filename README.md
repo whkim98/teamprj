@@ -12,23 +12,17 @@
 ## 프로젝트 일정 및 규모
 * 기간 : 2023.05.29 ~ 2023.06.05
 * 인원 : 2명
-<img width="800" alt="image" src="https://github.com/bangjunny/together/assets/116734433/74dbf69d-8c41-4ecb-91b7-48b090dffc5a">
 <br/>
 
 ## 팀원
 이름|담당 기능|Github
 ---|---|---
-전병준|디자인 총괄, 양도 페이지|[bangjunny](https://github.com/bangjunny)
-박명수|조인 페이지, 친구 목록 페이지|[BluffingPark](https://github.com/BluffingPark)
-이지현|디자인 총괄, 마이페이지|[jihyunnee](https://github.com/jihyunnee)
-조경현|채팅 리스트, 관리자 페이지|[ChickenMania123](https://github.com/ChickenMania123)
-강동현|로그인, 회원가입|[Unic31](https://github.com/Unic31)
-신동휘|메인페이지, 랭킹 페이지|[Alpac495](https://github.com/Alpac495)
-신승우|후기 페이지, 공지사항 페이지|[tlstmddn683](https://github.com/tlstmddn683)
+김우형|입/퇴실, 휴가, MAP, 디자인 총괄|[whkim98](https://github.com/whkim98)
+강하윤|시험, 캘린더|[hayooniiiiii](https://github.com/hayooniiiiii)
 <br/>
 
 ## Physical ERD
-<img width="800" alt="image" src="https://github.com/bangjunny/together/assets/116734433/83c335af-67ce-4128-8cf8-a24a38d0e7e6">
+<img src="https://github.com/whkim98/teamprj/assets/86636344/2f12c663-eff8-481b-9912-235889b68cc5" width="800">
 <br/>
 
 ## 개발환경
