@@ -3,19 +3,15 @@
 <b>그것 아카데미, 더 수월한 학원 관리!</b> 쉽고 간편하게 출결 관리를 하고 다양한 교육을 체험하세요!<br/>
 
 ## 주요기능
-* 실시간 채팅으로 통한 조인 및 양도 활동
-* nShortURL 기능을 이용한 공유
-* SMS 인증을 통한 본인인증
-* 관리자 계정을 이용해 비매너 블랙리스트 관리
-<br/><br/>
-
-## 프로젝트 시연 영상
-[<img src="https://github.com/bangjunny/together/assets/116734433/48783823-b3db-448b-958b-ff5417483755" width="400"/>](https://www.youtube.com/watch?v=6GRKU_7jQ8k)
+* 원클릭으로 입실과 퇴실을 한 번에
+* 간편한 휴가 신청
+* 캘린더를 통한 쉬운 출결 관리
+* 시험 및 점수 확인 그리고 채점까지
 <br/><br/>
 
 ## 프로젝트 일정 및 규모
-* 기간 : 2023.07.03 ~ 2023.08.04
-* 인원 : 7명
+* 기간 : 2023.05.29 ~ 2023.06.05
+* 인원 : 2명
 <img width="800" alt="image" src="https://github.com/bangjunny/together/assets/116734433/74dbf69d-8c41-4ecb-91b7-48b090dffc5a">
 <br/>
 
